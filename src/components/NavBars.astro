@@ -1,0 +1,67 @@
+---
+
+---
+
+<nav>
+    <ul>
+        <li>
+            <a href="/about">
+                <p>Who?</p>
+            </a>
+        </li>
+        <li>
+            <a href="/work">
+                <p>Work</p>
+            </a>
+        </li>
+        <li>
+            <a href="/blog">
+                <p>Blog</p>
+            </a>
+        </li>
+        <li>
+            <a href="/contact">
+                <p>Reach Out</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<style>
+    nav {
+        ul {
+            --nav-item-height: 3.75rem;
+            display: grid;
+            grid-template-columns: repeat(4, var(--nav-item-height));
+            height: 100vh;
+            width: fit-content;
+            > li {
+                display: grid;
+                a {
+                    display: grid;
+                    align-self: center;
+                    width: var(--nav-item-height);
+                    height: 100svh;
+                    p {
+                        writing-mode: vertical-rl;
+                        text-orientation: sideways;
+                        transform: rotate(180deg);
+                        margin: auto auto;
+                    }
+                }
+            }
+            li:nth-child(1) {
+                background-color: var(--bone);
+            }
+            li:nth-child(2) {
+                background-color: var(--blue);
+            }
+            li:nth-child(3) {
+                background-color: var(--red);
+            }
+            li:nth-child(4) {
+                background-color: var(--yellow);
+            }
+        }
+    }
+</style>

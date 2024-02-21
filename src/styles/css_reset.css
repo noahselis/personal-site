@@ -1,0 +1,146 @@
+/* this css reset is a mixture of Josh Comeau's, Andy Bell's, Kevin Powell's
+*  and other stuff that I found on the ground.
+*  https://www.joshwcomeau.com/css/custom-css-reset/#changelog-12 - 6/9/23	
+*  https://andy-bell.co.uk/a-more-modern-css-reset/ - 11/19/23
+*  https://www.kevinpowell.co/article/css-remedy/ - 02/23/19
+* */
+
+/*
+Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/*
+Remove default margin, padding, and typography styles.
+*/
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+
+/*
+* makes it so that iPhones won't dork up the font size in landscape mode
+* use system preferences for dark / light mode
+*/
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+	/* color-scheme: light dark; */
+}
+
+/*
+Add accessible line-height
+Improve text rendering
+*/
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	height: 100vh; /* fallback for older browsers */
+	/*  fallback for older browsers for the time being 
+	/* svh is used in favor of dvh because dvh causes
+	 * a weird layout shift on mobile */
+	height: 100svh;
+}
+
+/*
+Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/*
+Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+	overflow-wrap: break-word;
+}
+
+/* suck that luxuriously large line height back down for the headers */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+	line-height: 1.1;
+}
+
+/* good progressive enhancement solution for headers */
+/* needing a little extra help looking nice */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* assumes that when you add add a class to a ul or li you are doing something  */
+/* fancy to is so kick it back to normal town. */
+ul[class],
+ol[class] {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* why doesn't this happen automagically? make it make sense. */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+
+	html {
+		scroll-behavior: initial;
+	}
+}
+
+/*
+Create a root stacking context (mostly just for React projects)
+*/
+#root,
+#__next {
+	isolation: isolate;
+}
