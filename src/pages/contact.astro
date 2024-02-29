@@ -97,10 +97,26 @@ const info = [
 <style>
     body {
         background-color: var(--yellow);
-    }
-    .contact-buttons {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 3rem;
+        .contact-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 3rem;
+        }
+        header {
+            nav.main-nav {
+                li:has(a[href="/about"]) {
+                    display: none;
+                }
+                li:has(a[href="/work"]) {
+                    display: none;
+                }
+                li:has(a[href="/blog"]) {
+                    display: none;
+                }
+                li:has(a[href="/contact"]) {
+                    display: none;
+                }
+            }
+        }
     }
 </style>

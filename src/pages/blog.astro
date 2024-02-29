@@ -30,5 +30,18 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     body {
         background-color: var(--red);
         color: var(--white);
+        header {
+            nav.main-nav {
+                li:has(a[href="/about"]) {
+                    display: none;
+                }
+                li:has(a[href="/work"]) {
+                    display: none;
+                }
+                li:has(a[href="/blog"]) {
+                    display: none;
+                }
+            }
+        }
     }
 </style>
