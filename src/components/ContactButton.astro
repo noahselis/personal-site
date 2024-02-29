@@ -4,7 +4,7 @@ const { icon, alt, title, link, target } = Astro.props;
 
 <a href={link} target={target}>
     <div>
-        <img width="25px" height="25px" src={icon} alt={alt} />
+        <img width="25px" height="25px" src={icon.src} alt={alt} />
         <p>{title}</p>
     </div>
 </a>

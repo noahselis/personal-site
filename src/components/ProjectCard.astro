@@ -1,10 +1,11 @@
 ---
 const { src, alt, link } = Astro.props;
+import { Image } from "astro:assets";
 ---
 
 <a href={link} target="_blank" rel="noopener noreferrer">
     <div class="work-card">
-        <img width="250px" height="225px" src={src} alt={alt} />
+        <Image src={src} alt={alt} width="250" height="225" />
     </div>
 </a>
 

@@ -1,46 +1,52 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 import ContactButton from "../components/ContactButton.astro";
+import githubIcon from "../images/svgs/github-icon.svg";
+import linkedinIcon from "../images/svgs/linkedin-icon.svg";
+import twitterIcon from "../images/svgs/twitter-icon.svg";
+import pencilIcon from "../images/svgs/pencil-icon.svg";
+import bookIcon from "../images/svgs/book-icon.svg";
+import downloadIcon from "../images/svgs/download-icon.svg";
 
 const info = [
     {
         title: "github",
-        icon: "src/images/svgs/github-icon.svg",
+        icon: githubIcon,
         alt: "github icon",
         link: "https://github.com/noahselis",
         target: "_blank",
     },
     {
         title: "linkedin",
-        icon: "src/images/svgs/linkedin-icon.svg",
+        icon: linkedinIcon,
         alt: "linkedin icon",
         link: "https://www.linkedin.com/in/noah-selis/",
         target: "_blank",
     },
     {
         title: "twitter",
-        icon: "src/images/svgs/twitter-icon.svg",
+        icon: twitterIcon,
         alt: "twitter icon",
         link: "https://twitter.com/sortaonlineguy",
         target: "_blank",
     },
     {
         title: "email",
-        icon: "src/images/svgs/pencil-icon.svg",
+        icon: pencilIcon,
         alt: "email icon",
         link: "mailto:noahselis7@gmailcom",
         target: "self",
     },
     {
         title: "books",
-        icon: "src/images/svgs/book-icon.svg",
+        icon: bookIcon,
         alt: "book icon",
         link: "#",
         target: "self",
     },
     {
         title: "download",
-        icon: "src/images/svgs/download-icon.svg",
+        icon: downloadIcon,
         alt: "download icon",
         link: "#",
         target: "self",
@@ -48,7 +54,9 @@ const info = [
 ];
 ---
 
-<SiteLayout title="Noah Selis | Contact"     logoPadding="3.125rem 0.625rem 0 0.625rem"
+<SiteLayout
+    title="Noah Selis | Contact"
+    logoPadding="3.125rem 0.625rem 0 0.625rem"
 >
     <nav>
         <ul>
