@@ -58,7 +58,7 @@ const info = [
     title="Noah Selis | Contact"
     logoPadding="3.125rem 0.625rem 0 0.625rem"
 >
-    <nav class="secondary-nav">
+    <nav>
         <ul>
             <li>
                 <a href="/about">
@@ -77,7 +77,7 @@ const info = [
             </li>
         </ul>
     </nav>
-    <div class="content-wrapper">
+    <div class="content">
         <div>
             <h1>Drop Me a Dime and Let's Connect!</h1>
             <div class="contact-buttons">
@@ -99,10 +99,9 @@ const info = [
 <style>
     body {
         background-color: var(--yellow);
-        .content-wrapper {
+        .content {
             display: grid;
             place-items: center;
-            width: 100%;
             .contact-buttons {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

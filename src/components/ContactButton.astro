@@ -4,8 +4,10 @@ const { icon, alt, title, link, target } = Astro.props;
 
 <a href={link} target={target}>
     <div>
-        <img width="25px" height="25px" src={icon.src} alt={alt} />
-        <p>{title}</p>
+        <span>
+            <img width="25px" height="25px" src={icon.src} alt={alt} />
+            <p>{title}</p>
+        </span>
     </div>
 </a>
 
@@ -18,9 +20,18 @@ const { icon, alt, title, link, target } = Astro.props;
             border: 3px dashed var(--black);
             padding: 2.4rem 2.4rem;
             background-color: var(--black-30);
-            p {
-                padding-top: 0.25rem;
-                white-space: nowrap;
+            span {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img {
+                    width: 40px;
+                    height: 40px;
+                    margin-bottom: 0.5rem;
+                }
+                p {
+                    white-space: nowrap;
+                }
             }
         }
     }
