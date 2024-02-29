@@ -2,6 +2,49 @@
 import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
-<SiteLayout title="About Page">
-    <h1>About</h1>
+<SiteLayout
+    title="Noah Selis | About"
+    logoPadding="3.125rem 0.625rem 0 0.625rem"
+>
+    <section>
+        <div class="img-container">
+            <img src="/src/images/Noah_Headshot_crop.webp" alt="Noah Selis" />
+        </div>
+        <div class="copy-container">
+            <h1>Who is<br /> this guy?</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur.
+            </p>
+        </div>
+    </section>
+
+    <style>
+        body {
+            background-color: var(--bone);
+            section {
+                display: flex;
+                gap: 1.125rem;
+                justify-items: space-between;
+                .img-container {
+                    width: 50%;
+                    img {
+                        height: 100%;
+                    }
+                }
+                .copy-container {
+                    display: grid;
+                    align-content: center;
+                    width: 50%;
+                    p {
+                        max-width: 60ch;
+                    }
+                }
+            }
+        }
+    </style>
 </SiteLayout>

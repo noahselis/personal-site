@@ -1,14 +1,17 @@
 html {
 	--blue: oklch(70.13% 0.129 251.33);
-	--yellow: oklch(81.97% 0.1706020418716201 78.46575923690708);
+	--yellow: oklch(81.97% 0.17 78.46);
 	--red: oklch(64.85% 0.215 25.51);
-	--bone: oklch(95.35% 0.08885829983848534 139.6396302622263);
+	--bone: oklch(95.35% 0.09 139.64);
 	--charcoal: oklch(36.35% 0.017 248.31);
 	--black: oklch(0% 0 0);
+	--black-30: oklch(0% 0 0 / 0.05);
 	--white: oklch(100% 0 0);
 }
 
 body {
+	height: 100svh;
+	overflow: hidden;
 	@font-face {
 		font-family: "Montserrat";
 		src: local("Montserrat"),
@@ -38,6 +41,7 @@ body {
 		font-size: clamp(2rem, 1.5309rem + 1.9753vw, 4rem);
 		font-weight: 600;
 		line-height: 1.2;
+		margin-bottom: 3rem;
 	}
 
 	h2 {
@@ -82,6 +86,7 @@ body {
 		font-size: 1.25rem;
 		font-weight: 400;
 		line-height: 1.5;
+		max-width: 60ch;
 	}
 
 	/* remove default button styles */
@@ -93,5 +98,50 @@ body {
 
 	ul {
 		padding-inline-start: 40px;
+	}
+
+	/* navigation styles */
+	nav {
+		ul {
+			--nav-item-height: 3.75rem;
+			display: flex;
+			grid-template-columns: repeat(
+				4,
+				var(--nav-item-height)
+			);
+			height: 100vh;
+			padding-inline-start: 0;
+			> li {
+				display: grid;
+				cursor: pointer;
+				a {
+					display: grid;
+					align-self: center;
+					width: var(--nav-item-height);
+					height: 100svh;
+					p {
+						writing-mode: vertical-rl;
+						text-orientation: sideways;
+						transform: rotate(180deg);
+						margin: auto auto;
+					}
+				}
+			}
+			li:nth-child(1) {
+				background-color: var(--bone);
+			}
+			li:nth-child(2) {
+				background-color: var(--blue);
+			}
+			li:nth-child(3) {
+				background-color: var(--red);
+			}
+			li:nth-child(4) {
+				background-color: var(--yellow);
+			}
+		}
+	}
+	nav.secondary-nav {
+		margin-right: 3.125rem;
 	}
 }

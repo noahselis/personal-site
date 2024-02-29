@@ -2,25 +2,28 @@
 import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
-<SiteLayout title="Home Page">
-    <h1>Home</h1>
-    <p>I need to be able to change global styles based on what page i'm on.</p>
-    <p>
-        Namely:
-        <ul>
-            <li>
-                the padding on the &lt;main&gt; element so that the logo goes
-                where it needs to when on any page other than the home page
-                <li>
-                    this is going to jusst be a boolean on the PageLayout component that checks the url and sets the padding accordingly
-                </li>
-            </li>
-            <li>
-                the navigation styles so that the background color of the
-                &lt;main&gt; element changes to the right color and they expand
-                out from the side
-            </li>
-            <li>the color of the body copy based on that background color</li>
-        </ul>
-    </p></SiteLayout
->
+<SiteLayout title="Noah Selis | Home Page" logoPadding="3.125rem 0 0 3.125rem">
+    <div class="content-wrapper">
+        <h1>Hi!</h1>
+        <p>My name is Noah Selis.</p>
+        <p>
+            I’m a developer from Boise, ID and I build websites for cool people.
+        </p>
+    </div>
+</SiteLayout>
+<style>
+    body {
+        background-color: var(--white);
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 3.125rem;
+            p {
+                max-width: 28ch;
+                margin-bottom: 1.5rem;
+            }
+            outline: 1px solid red;
+        }
+    }
+</style>

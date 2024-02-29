@@ -1,8 +1,98 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+import ContactButton from "../components/ContactButton.astro";
+
+const info = [
+    {
+        title: "github",
+        icon: "src/images/svgs/github-icon.svg",
+        alt: "github icon",
+        link: "https://github.com/noahselis",
+        target: "_blank",
+    },
+    {
+        title: "linkedin",
+        icon: "src/images/svgs/linkedin-icon.svg",
+        alt: "linkedin icon",
+        link: "https://www.linkedin.com/in/noah-selis/",
+        target: "_blank",
+    },
+    {
+        title: "twitter",
+        icon: "src/images/svgs/twitter-icon.svg",
+        alt: "twitter icon",
+        link: "https://twitter.com/sortaonlineguy",
+        target: "_blank",
+    },
+    {
+        title: "email",
+        icon: "src/images/svgs/pencil-icon.svg",
+        alt: "email icon",
+        link: "mailto:noahselis7@gmailcom",
+        target: "self",
+    },
+    {
+        title: "books",
+        icon: "src/images/svgs/book-icon.svg",
+        alt: "book icon",
+        link: "#",
+        target: "self",
+    },
+    {
+        title: "download",
+        icon: "src/images/svgs/download-icon.svg",
+        alt: "download icon",
+        link: "#",
+        target: "self",
+    },
+];
 ---
 
-<SiteLayout title="Contact Page">
-    <h1>Contact</h1>
+<SiteLayout title="Noah Selis | Contact"     logoPadding="3.125rem 0.625rem 0 0.625rem"
+>
+    <nav>
+        <ul>
+            <li>
+                <a href="/about">
+                    <p>Who?</p>
+                </a>
+            </li>
+            <li>
+                <a href="/work">
+                    <p>Work</p>
+                </a>
+            </li>
+            <li>
+                <a href="/blog">
+                    <p>Blog</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <h1>Drop Me a Dime and Let's Connect!</h1>
+        <div class="contact-buttons">
+            {
+                info.map((item) => (
+                    <ContactButton
+                        title={item.title}
+                        icon={item.icon}
+                        alt={item.alt}
+                        link={item.link}
+                    />
+                ))
+            }
+        </div>
+    </div>
 </SiteLayout>
 
+<style>
+    body {
+        background-color: var(--yellow);
+    }
+    .contact-buttons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 3rem;
+    }
+</style>

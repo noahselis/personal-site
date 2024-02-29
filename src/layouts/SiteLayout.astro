@@ -4,12 +4,8 @@ import Header from "../components/Header.astro";
 import "../styles/global.css";
 import "../styles/css_reset.css";
 
-const { title } = Astro.props;
+const { title, logoPadding } = Astro.props;
 ---
-
-<script>
-    const url = window.location.href;
-</script>
 
 <html lang="en">
     <head>
@@ -19,7 +15,7 @@ const { title } = Astro.props;
     </head>
     <body>
         <main>
-            <Logo />
+            <Logo logoPadding={logoPadding} />
             <slot />
         </main>
         <Header />
@@ -28,15 +24,17 @@ const { title } = Astro.props;
 
 <style>
     body {
+        background-color: var(--backgroundColor);
         display: grid;
         grid-template-columns: 1fr auto;
+        justify-content: center;
         header {
             grid-row: 1;
         }
-
         main {
-            padding: 3.125rem;
             grid-row: 1;
+            display: flex;
+            padding-right: 3.125rem;
         }
     }
 </style>

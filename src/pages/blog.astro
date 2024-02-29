@@ -2,7 +2,31 @@
 import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
-<SiteLayout title="Blog">
+<SiteLayout title="Noah Selis | Blog"     logoPadding="3.125rem 0.625rem 0 0.625rem">
+
+    <nav>
+        <ul>
+            <li>
+                <a href="/about">
+                    <p>Who?</p>
+                </a>
+            </li>
+            <li>
+                <a href="/work">
+                    <p>Work</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
     <h1>Blog</h1>
+    <ul>
+        <li><a href="/posts/post-1">First Post</a></li>
+    </ul>
 </SiteLayout>
 
+<style>
+    body {
+        color: var(--white);
+        background-color: var(--red);
+    }
+</style>

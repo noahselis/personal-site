@@ -1,7 +1,83 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = [
+    {
+        src: "/src/images/discover-spokane-valley-homepage.webp",
+        alt: "discover spokane valley homepage",
+        link: "https://discoverspokanevalley.com",
+    },
+    {
+        src: "/src/images/catch-idaho-homepage.webp",
+        alt: "catch idaho homepage",
+        link: "https://catchidaho.org",
+    },
+    {
+        src: "/src/images/california-gold-development-corp-homepage.webp",
+        alt: "california gold development corp homepage",
+        link: "https://calgolddevelopment.com/",
+    },
+    {
+        src: "/src/images/gowen-thunder-airshow-homepage.webp",
+        alt: "gowen thunder airshow homepage",
+        link: "https://gowenthunder.org",
+    },
+];
 ---
 
-<SiteLayout title="Home Page">
-    <h1>Work</h1>
+<SiteLayout
+    title="Noah Selis | Work"
+    logoPadding="3.125rem 0.625rem 0 0.625rem"
+>
+    <nav class="secondary-nav">
+        <ul>
+            <li>
+                <a href="/about">
+                    <p>Who?</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Some stuff I've built that I'm proud of</h1>
+        <div class="project-cards">
+            {
+                projects.map((project) => (
+                    <ProjectCard
+                        src={project.src}
+                        alt={project.alt}
+                        link={project.link}
+                    />
+                ))
+            }
+        </div>
+    </div>
 </SiteLayout>
+
+<style>
+    body {
+        background-color: var(--blue);
+        color: var(--white);
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .project-cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                column-gap: 1rem;
+                row-gap: 4rem;
+                gap: 4rem;
+
+                @media (width > 1500px) {
+                    grid-template-columns: repeat(
+                        auto-fill,
+                        minmax(400px, 1fr)
+                    );
+                    gap: 2rem;
+                }
+            }
+        }
+    }
+</style>

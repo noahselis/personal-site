@@ -1,0 +1,27 @@
+---
+const { icon, alt, title, link, target } = Astro.props;
+---
+
+<a href={link} target={target}>
+    <div>
+        <img width="25px" height="25px" src={icon} alt={alt} />
+        <p>{title}</p>
+    </div>
+</a>
+
+<style>
+    a {
+        div {
+            display: grid;
+            place-items: center;
+            border-radius: 1rem;
+            border: 3px dashed var(--black);
+            padding: 2.4rem 2.4rem;
+            background-color: var(--black-30);
+            p {
+                padding-top: 0.25rem;
+                white-space: nowrap;
+            }
+        }
+    }
+</style>

@@ -1,0 +1,18 @@
+---
+const { src, alt, link } = Astro.props;
+---
+
+<a href={link} target="_blank" rel="noopener noreferrer">
+    <div class="work-card">
+        <img width="250px" height="225px" src={src} alt={alt} />
+    </div>
+</a>
+
+<style>
+    .work-card {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+</style>
