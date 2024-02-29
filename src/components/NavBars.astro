@@ -28,7 +28,7 @@
         const url = window.location.pathname;
 
         const aboutPage = document.querySelector(
-            ".main-nav a[href='/about']"
+            ""
         ).parentElement;
         const workPage = document.querySelector(
             ".main-nav a[href='/work']"
@@ -43,7 +43,6 @@
         function setActivePage() {
             switch (url) {
                 case "/about":
-                    aboutPage.style.display = "none";
                     break;
                 case "/work":
                     workPage.style.display = "none";

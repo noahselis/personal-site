@@ -47,6 +47,13 @@ import headshot from "../images/noah-selis-headshot.webp";
                     }
                 }
             }
+            header {
+                nav.main-nav {
+                    li:has(a[href="/about"]) {
+                        display: none;
+                    }
+                }
+            }
         }
     </style>
 </SiteLayout>
