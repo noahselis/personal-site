@@ -121,7 +121,7 @@ select {
 	font: inherit;
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
+/* Remove all animations and transitions for people that prefer not to see them 
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,
@@ -135,7 +135,7 @@ select {
 	html {
 		scroll-behavior: initial;
 	}
-}
+}*/
 
 /*
 Create a root stacking context (mostly just for React projects)

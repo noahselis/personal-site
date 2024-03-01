@@ -19,7 +19,7 @@ import headshot from "../images/noah-selis-headshot.webp";
     title="Noah Selis | About"
     logoPadding="3.125rem 0.625rem 0 0.625rem"
 >
-    <section>
+    <section class='content-wrapper'>
         <div class="img-container">
             <Image src={headshot} alt="Noah Selis" />
         </div>
@@ -43,40 +43,51 @@ import headshot from "../images/noah-selis-headshot.webp";
                 by my Papa Dan that I inherited from my dad.
             </p>
         </div>
-
-        <style>
-            body {
-                background-color: var(--bone);
-                section {
-                    display: flex;
-                    gap: 1.125rem;
-                    justify-items: space-between;
-                    .img-container {
-                        width: 50%;
-                        img {
-                            height: 100%;
-                        }
-                        @media (width > 1500px) {
-                            width: 40%;
-                        }
-                    }
-                    .copy-container {
-                        display: grid;
-                        align-content: center;
-                        width: 50%;
-                        p {
-                            max-width: 60ch;
-                        }
-                    }
-                }
-                header {
-                    nav.main-nav {
-                        li.about {
-                            display: none;
-                        }
-                    }
-                }
-            }
-        </style>
     </section>
 </SiteLayout>
+
+<style>
+    body {
+        background-color: var(--bone);
+        section {
+            h1 {
+                font-size: 4rem;
+            }
+            display: flex;
+            gap: 1.125rem;
+            justify-items: space-between;
+            .img-container {
+                width: 50%;
+                img {
+                    height: 100%;
+                }
+                @media (width > 1500px) {
+                    width: 40%;
+                }
+            }
+            .copy-container {
+                display: grid;
+                align-content: center;
+                width: 50%;
+                p {
+                    max-width: 60ch;
+                }
+            }
+            @media (width < 1000px) {
+                .img-container {
+                    display: none;
+                }
+                .copy-container {
+                    width: 100%;
+                }
+            }
+        }
+        header {
+            nav.main-nav {
+                li.about {
+                    display: none;
+                }
+            }
+        }
+    }
+</style>

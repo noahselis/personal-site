@@ -1,12 +1,22 @@
 html {
+	/* light mode */
 	--blue: oklch(70.13% 0.129 251.33);
 	--yellow: oklch(81.97% 0.17 78.46);
 	--red: oklch(64.85% 0.215 25.51);
 	--bone: oklch(95.35% 0.09 139.64);
 	--charcoal: oklch(36.35% 0.017 248.31);
-	--black: oklch(0% 0 0);
-	--black-30: oklch(0% 0 0 / 0.05);
+
+	/* dark mode */
+	--dark-blue: oklch(27.08% 0.1 259.9);
+	--pink: oklch(82.07% 0.142 337.53);
+	--dark-red: oklch(50.21% 0.199 24.62);
+	--teal: oklch(61.6% 0.104 183.19);
+	--black: oklch(18.22% 0 0);
+
+	--black-05: oklch(0% 0 0 / 0.05);
+	--black-80: oklch(0% 0 0 / 0.8);
 	--white: oklch(100% 0 0);
+	--grey: oklch(50% 0 0);
 }
 
 body {
@@ -103,11 +113,10 @@ body {
 		line-height: 1.5;
 	}
 
-	/* remove default button styles */
 	button {
-		border: none;
-		background: none;
-		cursor: pointer;
+        border: none;
+        background: none;
+        cursor: pointer;
 	}
 
 	ul {
@@ -130,10 +139,11 @@ body {
 	/* navigation styles */
 	nav {
 		ul {
-			--nav-item-height: 3.75rem;
+			--nav-item-width: 3.75rem;
+			--nav-item-height: 100svh;
+			height: var(--nav-item-height);
 			display: flex;
-			grid-template-columns: repeat(4, var(--nav-item-height));
-			height: 100vh;
+			grid-template-columns: repeat(4, var(--nav-item-width));
 			padding-inline-start: 0;
 			> li {
 				display: grid;
@@ -141,8 +151,8 @@ body {
 				a {
 					display: grid;
 					align-self: center;
-					width: var(--nav-item-height);
-					height: 100svh;
+					width: var(--nav-item-width);
+					height: var(--nav-item-height);
 					p {
 						writing-mode: vertical-rl;
 						text-orientation: sideways;
@@ -164,8 +174,5 @@ body {
 				background-color: var(--yellow);
 			}
 		}
-	}
-	nav.secondary-nav {
-		margin-right: 3.125rem;
 	}
 }

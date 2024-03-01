@@ -3,13 +3,13 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
 <SiteLayout title="Noah Selis | Home Page" logoPadding="3.125rem 0 0 3.125rem">
-    <div class="content-wrapper">
+    <section class="content-wrapper">
         <h1>Hi!</h1>
         <p>My name is Noah Selis.</p>
         <p>
-            I’m a developer from Boise, ID and I build websites for cool people.
+            I’m a developer from Boise, ID<br /> and I build websites for cool people.
         </p>
-    </div>
+    </section>
 </SiteLayout>
 <style>
     body {
@@ -18,7 +18,6 @@ import SiteLayout from "../layouts/SiteLayout.astro";
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin-left: 3.125rem;
             p {
                 margin-bottom: 1.5rem;
             }

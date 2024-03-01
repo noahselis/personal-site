@@ -1,19 +1,73 @@
 ---
-const { src, alt, link } = Astro.props;
+const { src, alt, link, target, title, description } = Astro.props;
 import { Image } from "astro:assets";
+import paperplane from "../images/svgs/paper-plane.svg";
+
+import Button from "../components/Button.astro";
 ---
 
-<a href={link} target="_blank" rel="noopener noreferrer">
-    <div class="work-card">
-        <Image src={src} alt={alt} width="535" height="285" />
+<div class="work-card">
+    <Image src={src} alt={alt} width="535" height="285" />
+    <div class="project-info">
+        <span>
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <a href={link} target={target} rel="noopener noreferrer">
+                <Button
+                    style="white"
+                    text="view project"
+                    icon={paperplane}
+                    iconFill="var(--white)"
+                />
+            </a>
+        </span>
     </div>
-</a>
+</div>
 
 <style>
     .work-card {
+        background-color: var(--white);
+        border-radius: 0.3rem;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 0;
+        transition: all 3s ease;
         img {
             width: 100%;
             height: auto;
+        }
+        .project-info {
+            display: grid;
+            place-content: center;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--black-80);
+            color: var(--white);
+            z-index: 1;
+            border: 1px solid var(--white);
+            border-radius: 0.3rem;
+            transition: opacity 0.3s ease;
+            span {
+                width: fit-content;
+                margin: 0 auto;
+                text-align: center;
+            }
+            h2 {
+                color: var(--white);
+                margin-bottom: 0.5rem;
+            }
+            p {
+                color: var(--white);
+                margin-bottom: 0.5rem;
+            }
+        }
+        &:hover .project-info {
+            opacity: 1;
         }
     }
 </style>

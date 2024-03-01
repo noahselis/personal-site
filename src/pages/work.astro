@@ -11,21 +11,35 @@ const projects = [
         src: citspo,
         alt: "discover spokane valley homepage",
         link: "https://discoverspokanevalley.com",
+        target: "_blank",
+        title: "Discover Spokane Valley",
+        description:
+            "A tourism site for the city of Spokane Valley, Washington.",
     },
     {
         src: catchIdaho,
         alt: "catch idaho homepage",
         link: "https://catchidaho.org",
+        target: "_blank",
+        title: "CATCH Idaho",
+        description:
+            "CATCH is a non-profit made to provide assitance to Boise's homeless population.",
     },
     {
         src: calgold,
         alt: "california gold development corp homepage",
         link: "https://calgolddevelopment.com/",
+        target: "_blank",
+        title: "California Gold Development Corp",
+        description: "A portfolio site for this property development company.",
     },
     {
         src: gowen,
         alt: "gowen thunder airshow homepage",
         link: "https://gowenthunder.org",
+        target: "_blank",
+        title: "Gowen Thunder Airshow",
+        description: "Gowen Thunder Airshow, is an annual military airshow held in Boise, ID.",
     },
 ];
 ---
@@ -36,14 +50,14 @@ const projects = [
 >
     <nav class="secondary-nav">
         <ul>
-            <li class='about'>
+            <li class="about">
                 <a href="/about">
                     <p>Who?</p>
                 </a>
             </li>
         </ul>
     </nav>
-    <div class="content">
+    <section class="content-wrapper">
         <h1>Some stuff I've built that I'm proud of</h1>
         <div class="project-cards">
             {
@@ -52,29 +66,35 @@ const projects = [
                         src={project.src}
                         alt={project.alt}
                         link={project.link}
+                        title={project.title}
+                        description={project.description}
                     />
                 ))
             }
         </div>
-    </div>
+    </section>
 </SiteLayout>
 
 <style>
     body {
         background-color: var(--blue);
         color: var(--white);
-        .content {
+        .content-wrapper {
+            height: 100svh;
+            overflow-y: auto;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            h1 {
+                font-size: 4rem;
+            }
             .project-cards {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                 column-gap: 1rem;
                 row-gap: 4rem;
                 gap: 4rem;
-
+                margin-bottom: 4rem;
                 @media (width > 1500px) {
                     grid-template-columns: repeat(
                         auto-fill,
@@ -86,10 +106,10 @@ const projects = [
         }
         header {
             nav.main-nav {
-                li:has(a[href="/about"]) {
+                li.about {
                     display: none;
                 }
-                li:has(a[href="/work"]) {
+                li.work {
                     display: none;
                 }
             }
