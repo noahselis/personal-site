@@ -1,0 +1,62 @@
+---
+
+---
+
+<button id="hamburger-menu" class="">
+    <span id="top-bar"></span>
+    <span id="middle-bar"></span>
+    <span id="bottom-bar"></span>
+</button>
+
+<style>
+    #hamburger-menu {
+        position: absolute;
+        top: 3.25rem;
+        right: 3.125rem;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+        height: 2.4rem;
+        z-index: 1000;
+        @media (width > 699px) {
+            display: none;
+        }
+    }
+
+    span {
+        height: 0.375rem;
+        width: 3rem;
+        transition: transform 0.3s;
+    }
+    #top-bar {
+        transform: translateY(0);
+        background-color: var(--blue);
+    }
+    #middle-bar {
+        transform: translateY(0);
+        background-color: var(--red);
+    }
+    #bottom-bar {
+        transform: translateY(0);
+        background-color: var(--yellow);
+    }
+    button.open #top-bar {
+        transform: translateY(16px) rotate(45deg);
+    }
+    button.open #middle-bar {
+        transform: translateY(0px) rotate(135deg);
+    }
+    button.open #bottom-bar {
+        transform: translateY(-10px) rotate(-135deg);
+        display: none;
+    }
+</style>
+
+<script>
+    const hamburgerMenu = document.getElementById("hamburger-menu");
+    hamburgerMenu.addEventListener("click", () => {
+        hamburgerMenu.classList.toggle("open");
+    });
+</script>

@@ -114,9 +114,9 @@ body {
 	}
 
 	button {
-        border: none;
-        background: none;
-        cursor: pointer;
+		border: none;
+		background: none;
+		cursor: pointer;
 	}
 
 	ul {
@@ -143,7 +143,6 @@ body {
 			--nav-item-height: 100svh;
 			height: var(--nav-item-height);
 			display: flex;
-			grid-template-columns: repeat(4, var(--nav-item-width));
 			padding-inline-start: 0;
 			> li {
 				display: grid;
@@ -172,6 +171,25 @@ body {
 			}
 			li.contact {
 				background-color: var(--yellow);
+			}
+		}
+		&.mobile-nav {
+			display: none;
+		}
+	}
+	/* mobile nav */
+	@media (width < 700px) {
+		header {
+			position: aboslute;
+			nav.mobile-nav {
+				ul {
+					--nav-item-height: 3.75rem;
+					--nav-item-width: 100svh;
+					flex-direction: column;
+				}
+			}
+			nav.main-nav {
+				display: none;
 			}
 		}
 	}

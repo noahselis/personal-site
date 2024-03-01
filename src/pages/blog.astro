@@ -20,7 +20,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
             </li>
         </ul>
     </nav>
-    <section class='content-wrapper'>
+    <section class="content-wrapper">
         <h1>Blog</h1>
         <ul>
             <li><a href="/posts/post-1">First Post</a></li>
@@ -34,13 +34,13 @@ import SiteLayout from "../layouts/SiteLayout.astro";
         color: var(--white);
         header {
             nav.main-nav {
-                li:has(a[href="/about"]) {
+                li.about {
                     display: none;
                 }
-                li:has(a[href="/work"]) {
+                li.work {
                     display: none;
                 }
-                li:has(a[href="/blog"]) {
+                li.blog {
                     display: none;
                 }
             }

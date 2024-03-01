@@ -1,7 +1,17 @@
 ---
 import NavBars from "./NavBars.astro";
+import HambugerMenu from "./HamburgerMenu.astro";
 ---
 
 <header>
     <NavBars />
+    <HambugerMenu />
 </header>
+
+<style>
+    header {
+        nav {
+            position: relative;
+        }
+    }
+</style>
