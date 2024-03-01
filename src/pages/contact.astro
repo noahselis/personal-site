@@ -1,12 +1,16 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 import ContactButton from "../components/ContactButton.astro";
+
 import githubIcon from "../images/svgs/github-icon.svg";
 import linkedinIcon from "../images/svgs/linkedin-icon.svg";
 import twitterIcon from "../images/svgs/twitter-icon.svg";
 import pencilIcon from "../images/svgs/pencil-icon.svg";
-import bookIcon from "../images/svgs/book-icon.svg";
+// import bookIcon from "../images/svgs/book-icon.svg";
 import downloadIcon from "../images/svgs/download-icon.svg";
+import hotDog from "../images/svgs/hot-dog-icon.svg";
+
+import resume from "../images/noah-selis-resume.pdf";
 
 const info = [
     {
@@ -20,7 +24,7 @@ const info = [
         title: "linkedin",
         icon: linkedinIcon,
         alt: "linkedin icon",
-        link: "https://www.linkedin.com/in/noah-selis/",
+        link: "https://www.linkedin.com/in/noahselis/",
         target: "_blank",
     },
     {
@@ -37,19 +41,27 @@ const info = [
         link: "https://twitter.com/sortaonlineguy",
         target: "_blank",
     },
+    // {
+    //     title: "books",
+    //     icon: bookIcon,
+    //     alt: "book icon",
+    //     link: "#",
+    //     target: "self",
+    // },
     {
-        title: "books",
-        icon: bookIcon,
-        alt: "book icon",
+        title: "dogs",
+        icon: hotDog,
+        alt: "hot dog icon",
         link: "#",
-        target: "self",
+        target: "_blank",
     },
     {
         title: "resume",
         icon: downloadIcon,
         alt: "download icon",
-        link: "#",
+        link: resume,
         target: "self",
+        download: true,
     },
 ];
 ---
@@ -60,21 +72,21 @@ const info = [
 >
     <nav class="secondary-nav">
         <ul>
-            <li>
+            <li class="about">
                 <a href="/about">
                     <p>Who?</p>
                 </a>
             </li>
-            <li>
+            <li class="work">
                 <a href="/work">
                     <p>Work</p>
                 </a>
             </li>
-            <li>
-                <a href="/blog">
-                    <p>Blog</p>
-                </a>
-            </li>
+            <!-- <li class="blog"> -->
+            <!--     <a href="/blog"> -->
+            <!--         <p>Blog</p> -->
+            <!--     </a> -->
+            <!-- </li> -->
         </ul>
     </nav>
     <div class="content-wrapper">
@@ -88,6 +100,8 @@ const info = [
                             icon={item.icon}
                             alt={item.alt}
                             link={item.link}
+                            target={item.target}
+                            download={item.download}
                         />
                     ))
                 }
@@ -100,27 +114,34 @@ const info = [
     body {
         background-color: var(--yellow);
         .content-wrapper {
+            h1 {
+                font-size: 4rem;
+                color: var(--white);
+            }
             display: grid;
             place-items: center;
             width: 100%;
             .contact-buttons {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 gap: 3rem;
+                p {
+                    margin-bottom: 0;
+                }
             }
         }
         header {
             nav.main-nav {
-                li:has(a[href="/about"]) {
+                li.about {
                     display: none;
                 }
-                li:has(a[href="/work"]) {
+                li.work {
                     display: none;
                 }
-                li:has(a[href="/blog"]) {
+                li.blog {
                     display: none;
                 }
-                li:has(a[href="/contact"]) {
+                li.contact {
                     display: none;
                 }
             }

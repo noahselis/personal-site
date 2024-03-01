@@ -12,16 +12,29 @@ html {
 body {
 	height: 100svh;
 	overflow: hidden;
+	/* heading font */
 	@font-face {
 		font-family: "Montserrat";
 		src: local("Montserrat"),
 			url("../fonts/Montserrat-VariableFont_wght.ttf");
 		font-display: swap;
 	}
+	/* copy font */
 	@font-face {
-		font-family: "Barlow_Condensed";
-		src: local("Barlow_Condensed"),
+		font-family: "BarlowCondensed-Regular";
+		src: local("BarlowCondensed-Regular"),
 			url("../fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "BarlowCondensed-Bold";
+		src: local("BarlowCondensed-Bold"),
+			url("../fonts/Barlow_Condensed/BarlowCondensed-Bold.ttf");
+		font-weight: bold;
+		font-style: normal;
 		font-display: swap;
 	}
 
@@ -103,6 +116,15 @@ body {
 
 	p {
 		max-width: var(--max-char-width);
+		margin-bottom: 1.5rem;
+	}
+
+	strong {
+		font-weight: 700;
+	}
+
+	em {
+		font-style: italic;
 	}
 
 	/* navigation styles */
@@ -110,10 +132,7 @@ body {
 		ul {
 			--nav-item-height: 3.75rem;
 			display: flex;
-			grid-template-columns: repeat(
-				4,
-				var(--nav-item-height)
-			);
+			grid-template-columns: repeat(4, var(--nav-item-height));
 			height: 100vh;
 			padding-inline-start: 0;
 			> li {
@@ -132,16 +151,16 @@ body {
 					}
 				}
 			}
-			li:nth-child(1) {
+			li.about {
 				background-color: var(--bone);
 			}
-			li:nth-child(2) {
+			li.work {
 				background-color: var(--blue);
 			}
-			li:nth-child(3) {
+			li.blog {
 				background-color: var(--red);
 			}
-			li:nth-child(4) {
+			li.contact {
 				background-color: var(--yellow);
 			}
 		}

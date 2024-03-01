@@ -4,6 +4,17 @@ import { Image } from "astro:assets";
 import headshot from "../images/noah-selis-headshot.webp";
 ---
 
+<script>
+    const startDate = new Date("August 28, 2021");
+    const currentMillisecEl = document.getElementById("currentMillisec");
+
+    setInterval(() => {
+        const currentMillisec = new Date().getTime();
+        const elapsedMillisec = currentMillisec - startDate.getTime();
+        currentMillisecEl.textContent = elapsedMillisec;
+    }, 500);
+</script>
+
 <SiteLayout
     title="Noah Selis | About"
     logoPadding="3.125rem 0.625rem 0 0.625rem"
@@ -13,50 +24,59 @@ import headshot from "../images/noah-selis-headshot.webp";
             <Image src={headshot} alt="Noah Selis" />
         </div>
         <div class="copy-container">
-            <h1>Who is<br /> this guy?</h1>
+            <h1>Who is this guy?</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur.
+                <strong>I'm married to</strong> the photographer of every mid-2000s
+                empty foggy allyway turned art-director and I have three dogs named
+                Charlie, Howdy and Fig who laugh at each and every one of my jokes.
+            </p>
+            <p>
+                <strong>I've been building</strong> websites for a little over three
+                years or
+                <em>exactly</em>
+                <span id="currentMillisec"></span> milliseconds!
+            </p>
+            <p>
+                <strong>I have a few hobbies.</strong> I fancy myself a good cook,
+                I can make a pizza out of almost anything. I smoke a mean pork butt
+                too! I have a cool ass offset smoker that was handmade in south Texas
+                by my Papa Dan that I inherited from my dad.
             </p>
         </div>
-    </section>
 
-    <style>
-        body {
-            background-color: var(--bone);
-            section {
-                display: flex;
-                gap: 1.125rem;
-                justify-items: space-between;
-                .img-container {
-                    width: 50%;
-                    img {
-                        height: 100%;
+        <style>
+            body {
+                background-color: var(--bone);
+                section {
+                    display: flex;
+                    gap: 1.125rem;
+                    justify-items: space-between;
+                    .img-container {
+                        width: 50%;
+                        img {
+                            height: 100%;
+                        }
+                        @media (width > 1500px) {
+                            width: 40%;
+                        }
                     }
-                    @media (width > 1500px) {
-                        width: 40%;
+                    .copy-container {
+                        display: grid;
+                        align-content: center;
+                        width: 50%;
+                        p {
+                            max-width: 60ch;
+                        }
                     }
                 }
-                .copy-container {
-                    display: grid;
-                    align-content: center;
-                    width: 50%;
-                    p {
-                        max-width: 60ch;
+                header {
+                    nav.main-nav {
+                        li.about {
+                            display: none;
+                        }
                     }
                 }
             }
-            header {
-                nav.main-nav {
-                    li:has(a[href="/about"]) {
-                        display: none;
-                    }
-                }
-            }
-        }
-    </style>
+        </style>
+    </section>
 </SiteLayout>
