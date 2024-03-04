@@ -9,22 +9,23 @@ import pencilIcon from "../images/svgs/pencil-icon.svg";
 // import bookIcon from "../images/svgs/book-icon.svg";
 import downloadIcon from "../images/svgs/download-icon.svg";
 import hotDog from "../images/svgs/hot-dog-icon.svg";
+import vimIcon from "../images/svgs/vim-icon.svg";
 
 import resume from "../images/noah-selis-resume.pdf";
 
 const info = [
     {
-        title: "github",
-        icon: githubIcon,
-        alt: "github icon",
-        link: "https://github.com/noahselis",
-        target: "_blank",
-    },
-    {
         title: "linkedin",
         icon: linkedinIcon,
         alt: "linkedin icon",
         link: "https://www.linkedin.com/in/noahselis/",
+        target: "_blank",
+    },
+    {
+        title: "github",
+        icon: githubIcon,
+        alt: "github icon",
+        link: "https://github.com/noahselis",
         target: "_blank",
     },
     {
@@ -35,27 +36,6 @@ const info = [
         target: "self",
     },
     {
-        title: "twitter",
-        icon: twitterIcon,
-        alt: "twitter icon",
-        link: "https://twitter.com/sortaonlineguy",
-        target: "_blank",
-    },
-    // {
-    //     title: "books",
-    //     icon: bookIcon,
-    //     alt: "book icon",
-    //     link: "#",
-    //     target: "self",
-    // },
-    {
-        title: "dogs",
-        icon: hotDog,
-        alt: "hot dog icon",
-        link: "#",
-        target: "_blank",
-    },
-    {
         title: "resume",
         icon: downloadIcon,
         alt: "download icon",
@@ -63,6 +43,34 @@ const info = [
         target: "self",
         download: true,
     },
+    // {
+    //     title: "twitter",
+    //     icon: twitterIcon,
+    //     alt: "twitter icon",
+    //     link: "https://twitter.com/sortaonlineguy",
+    //     target: "_blank",
+    // },
+    // {
+    //     title: "books",
+    //     icon: bookIcon,
+    //     alt: "book icon",
+    //     link: "#",
+    //     target: "self",
+    // },
+    // {
+    //     title: "dogs",
+    //     icon: hotDog,
+    //     alt: "hot dog icon",
+    //     link: "#",
+    //     target: "_blank",
+    // },
+    // {
+    //     title: "vim?",
+    //     icon: vimIcon,
+    //     alt: "vim icon",
+    //     link: "https://www.vim.org/",
+    //     target: "_blank",
+    // },
 ];
 ---
 
@@ -125,11 +133,15 @@ const info = [
             .contact-buttons {
                 display: grid;
                 overflow-y: auto;
-                grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 1rem;
                 p {
                     margin-bottom: 0;
                 }
+            }
+            @media (width < 700px) {
+                overflow-y: auto;
+                padding: 2.6rem 1.25rem 3rem;
             }
         }
         header {

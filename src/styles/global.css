@@ -22,6 +22,7 @@ html {
 body {
 	height: 100svh;
 	overflow: hidden;
+	position: relative;
 	/* heading font */
 	@font-face {
 		font-family: "Montserrat";
@@ -157,17 +158,21 @@ body {
 						text-orientation: sideways;
 						transform: rotate(180deg);
 						margin: auto auto;
+						&.mobile-menu-open {
+							transform: rotate(0deg);
+							writing-mode: horizontal-tb;
+						}
 					}
 				}
 			}
 			li.about {
-				background-color: var(--bone);
+				background-color: var(--red);
 			}
 			li.work {
 				background-color: var(--blue);
 			}
 			li.blog {
-				background-color: var(--red);
+				background-color: var(--bone);
 			}
 			li.contact {
 				background-color: var(--yellow);
@@ -180,17 +185,27 @@ body {
 	/* mobile nav */
 	@media (width < 700px) {
 		header {
-			position: aboslute;
 			nav.mobile-nav {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
 				ul {
-					--nav-item-height: 3.75rem;
+					display: flex;
+					--nav-item-height: 33.33svh;
 					--nav-item-width: 100svh;
 					flex-direction: column;
+				}
+				&.mobile-menu-open {
+					display: flex;
 				}
 			}
 			nav.main-nav {
 				display: none;
 			}
+		}
+		nav.secondary-nav {
+			display: none;
 		}
 	}
 }

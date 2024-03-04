@@ -39,7 +39,8 @@ const projects = [
         link: "https://gowenthunder.org",
         target: "_blank",
         title: "Gowen Thunder Airshow",
-        description: "Gowen Thunder Airshow, is an annual military airshow held in Boise, ID.",
+        description:
+            "Gowen Thunder Airshow, is an annual military airshow held in Boise, ID.",
     },
 ];
 ---
@@ -102,6 +103,10 @@ const projects = [
                     );
                     gap: 2rem;
                 }
+            }
+            @media (width < 700px) {
+                overflow-y: auto;
+                padding: 2.6rem 1.25rem 3rem;
             }
         }
         header {

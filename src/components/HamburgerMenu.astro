@@ -23,20 +23,87 @@
         @media (width > 699px) {
             display: none;
         }
+        &.home {
+            #top-bar {
+                background-color: var(--red);
+            }
+            #middle-bar {
+                background-color: var(--blue);
+            }
+            #bottom-bar {
+                background-color: var(--yellow);
+            }
+            &.open {
+                #top-bar {
+                    background-color: var(--yellow);
+                }
+            }
+        }
+        &.about {
+            #top-bar {
+                background-color: var(--blue);
+            }
+            #middle-bar {
+                background-color: var(--bone);
+            }
+            #bottom-bar {
+                background-color: var(--yellow);
+            }
+            &.open {
+                #top-bar {
+                    background-color: var(--yellow);
+                }
+            }
+        }
+        &.work {
+            #top-bar {
+                background-color: var(--red);
+            }
+            #middle-bar {
+                background-color: var(--bone);
+            }
+            #bottom-bar {
+                background-color: var(--yellow);
+            }
+            &.open {
+                #top-bar {
+                    background-color: var(--yellow);
+                }
+            }
+        }
+        &.contact {
+            #top-bar {
+                background-color: var(--red);
+            }
+            #middle-bar {
+                background-color: var(--blue);
+            }
+            #bottom-bar {
+                background-color: var(--bone);
+            }
+            &.open {
+                #top-bar {
+                    background-color: var(--yellow);
+                }
+            }
+        }
     }
 
     span {
         height: 0.375rem;
         width: 3rem;
         transition: transform 0.3s;
+        #top-bar.home {
+            background-color: var(--red);
+        }
     }
+
     #top-bar {
         transform: translateY(0);
-        background-color: var(--blue);
     }
     #middle-bar {
         transform: translateY(0);
-        background-color: var(--red);
+        background-color: var(--blue);
     }
     #bottom-bar {
         transform: translateY(0);
@@ -55,8 +122,38 @@
 </style>
 
 <script>
-    const hamburgerMenu = document.getElementById("hamburger-menu");
-    hamburgerMenu.addEventListener("click", () => {
-        hamburgerMenu.classList.toggle("open");
+    document.addEventListener("DOMContentLoaded", () => {
+        // handle mobile menu
+        const hamburgerMenu = document.getElementById("hamburger-menu");
+        const mobileMenu = document.querySelector(".mobile-nav") as HTMLElement;
+        const logo = document.getElementById("site-logo") as HTMLElement;
+        const url = window.location.pathname;
+        const navCopy = document.querySelectorAll(".nav-copy");
+
+        hamburgerMenu.addEventListener("click", () => {
+            hamburgerMenu.classList.toggle("open");
+            mobileMenu.classList.toggle("mobile-menu-open");
+            logo.classList.toggle("mobile-menu-open");
+        // change class on .nav-copy
+        navCopy.forEach((el) => {
+            el.classList.toggle("mobile-menu-open");
+        });
+        });
+
+        // add class to hamburger menu based on url
+        function addClassToHamburgerMenu(url: string) {
+            const hamburgerMenu = document.getElementById("hamburger-menu");
+            const classes = {
+                "/": "home",
+                "/about": "about",
+                "/work": "work",
+                "/blog": "blog",
+                "/contact": "contact",
+            };
+            const className = classes[url];
+            hamburgerMenu.classList.add(className);
+        }
+        addClassToHamburgerMenu(url);
+
     });
 </script>

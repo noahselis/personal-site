@@ -1,25 +1,57 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+
+import Button from "../components/Button.astro";
+import paperplane from "../images/svgs/paper-plane.svg";
 ---
 
 <SiteLayout title="Noah Selis | Home Page" logoPadding="3.125rem 0 0 3.125rem">
     <section class="content-wrapper">
-        <h1>Hi!</h1>
-        <p>My name is Noah Selis.</p>
-        <p>
-            I’m a developer from Boise, ID<br /> and I build websites for cool people.
-        </p>
+        <div>
+            <h1>Well, howdy!</h1>
+            <p>I'm Noah Selis!</p>
+            <p>
+                I’m a developer from Boise, ID and I make cool websites for even
+                cooler people.
+            </p>
+            <p>
+                I started out building a React application with a team of
+                scrappy devs that helped folks get rich with NFTs.
+            </p>
+            <p>
+                Then when that bubble popped, I started making websites as the
+                sole developer for a local marketing agency.
+            </p>
+            <p>
+                I am passionate about web standards, accessibility, and
+                performance. I believe that the web is for everyone.
+            </p>
+        </div>
+        <!-- <div> -->
+        <!--     <Button -->
+        <!--         style="white" -->
+        <!--         text="fire away!" -->
+        <!--         icon={paperplane} -->
+        <!--         iconFill="var(--white)" -->
+        <!--     /> -->
+        <!-- </div> -->
     </section>
 </SiteLayout>
 <style>
     body {
         background-color: var(--white);
         .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            display: grid;
             p {
                 margin-bottom: 1.5rem;
+                max-width: 50ch;
+            }
+            > :last-child {
+                align-self: center;
+            }
+            @media (width < 700px) {
+                overflow-y: auto;
+                padding: 2.6rem 1.25rem 3rem;
             }
         }
     }
