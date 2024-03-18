@@ -77,6 +77,8 @@ const info = [
 <SiteLayout
     title="Noah Selis | Contact"
     logoPadding="3.125rem 0.625rem 0 0.625rem"
+    logoPositionTop="1.75rem"
+    logoPositionLeft="2.5rem"
 >
     <nav class="secondary-nav">
         <ul>
@@ -122,26 +124,17 @@ const info = [
     body {
         background-color: var(--yellow);
         .content-wrapper {
-            h1 {
-                font-size: 4rem;
-                color: var(--white);
-            }
             display: grid;
             place-items: center;
             width: 100%;
-            height: 100svh;
             .contact-buttons {
                 display: grid;
                 overflow-y: auto;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
                 gap: 1rem;
                 p {
                     margin-bottom: 0;
                 }
-            }
-            @media (width < 700px) {
-                overflow-y: auto;
-                padding: 2.6rem 1.25rem 3rem;
             }
         }
         header {

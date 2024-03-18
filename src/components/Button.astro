@@ -1,18 +1,23 @@
 ---
-const { style, text, icon, iconFill } = Astro.props;
+const { style, text, primaryIcon } = Astro.props;
 ---
 
 <button class={style}>
     {text}
     {
-        icon && (
+        primaryIcon && (
             <span>
-                <img src={icon.src} width="10px" height="10px" />
+                <img
+                    class="primaryIcon"
+                    src={primaryIcon.src}
+                    width="10px"
+                    height="10px"
+                />
             </span>
         )
     }
 </button>
-<style define:vars={{ iconFill }}>
+<style>
     /* remove default button styles */
     button {
         display: flex;
@@ -77,9 +82,11 @@ const { style, text, icon, iconFill } = Astro.props;
                 height: 1.1rem;
                 margin-left: 0.3rem;
                 margin-bottom: 0.5rem;
-                svg {
-                    fill: var(--iconFill);
-                }
+            }
+        }
+        &:hover {
+            .primaryIcon {
+                filter: invert(100%);
             }
         }
     }

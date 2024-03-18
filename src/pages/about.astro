@@ -6,11 +6,12 @@ import headshot from "../images/noah-selis-headshot.webp";
 
 <script>
     const startDate = new Date("August 28, 2021");
-    const currentMillisecEl = document.getElementById("currentMillisec");
+    const currentMillisecEl: HTMLElement =
+        document.getElementById("currentMillisec");
 
     setInterval(() => {
-        const currentMillisec = new Date().getTime();
-        const elapsedMillisec = currentMillisec - startDate.getTime();
+        const currentMillisec: number = new Date().getTime();
+        const elapsedMillisec: number = currentMillisec - startDate.getTime();
         currentMillisecEl.textContent = elapsedMillisec;
     }, 500);
 </script>
@@ -18,6 +19,8 @@ import headshot from "../images/noah-selis-headshot.webp";
 <SiteLayout
     title="Noah Selis | About"
     logoPadding="3.125rem 0.625rem 0 0.625rem"
+    logoPositionTop="1.75rem"
+    logoPositionLeft="2.5rem"
 >
     <section class="content-wrapper">
         <div class="img-container">
@@ -49,14 +52,17 @@ import headshot from "../images/noah-selis-headshot.webp";
 <style>
     body {
         background-color: var(--red);
+        background-size: calc(100% - 5rem);
         color: var(--white);
+        #site-logo {
+            background-color: var(--red);
+            background-color: transparent;
+        }
         section {
-            h1 {
-                font-size: 4rem;
-            }
             display: flex;
             gap: 1.125rem;
             justify-items: space-between;
+            height: 100svh;
             .img-container {
                 width: 50%;
                 img {
@@ -77,9 +83,9 @@ import headshot from "../images/noah-selis-headshot.webp";
                 span {
                     color: var(--white);
                 }
-
             }
             @media (width < 1000px) {
+                display: block;
                 .img-container {
                     display: none;
                 }

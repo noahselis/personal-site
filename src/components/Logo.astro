@@ -1,5 +1,5 @@
 ---
-const { logoPadding } = Astro.props;
+const { logoPositionTop, logoPositionLeft, logoPadding } = Astro.props;
 ---
 
 <button id="site-logo">
@@ -27,24 +27,20 @@ const { logoPadding } = Astro.props;
     </a>
 </button>
 
-<style define:vars={{ logoPadding }}>
+<style define:vars={{ logoPositionTop, logoPositionLeft, logoPadding }}>
     #site-logo {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        width: 100px;
-        background-color: var(--white);
-        padding: var(--logoPadding);
+        position: relative;
+        z-index: 1000;
         svg {
             min-width: 50px;
             min-height: 50px;
         }
-        &.mobile-menu-open {
-            position: absolute;
+        @media (width > 700px) {
+            position: fixed;
             top: 0;
             left: 0;
-            z-index: 100;
-            background-color: transparent;
+            padding: var(--logoPadding);
+            z-index: 1;
         }
     }
 </style>

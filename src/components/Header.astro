@@ -1,17 +1,19 @@
 ---
 import NavBars from "./NavBars.astro";
 import HambugerMenu from "./HamburgerMenu.astro";
+import Logo from "./Logo.astro";
+
+const { logoPadding, logoPositionTop, logoPositionLeft } = Astro.props;
 ---
 
 <header>
+    <Logo
+        logoPadding={logoPadding}
+        logoPositionTop={logoPositionTop}
+        logoPositionLeft={logoPositionLeft}
+    />
     <NavBars />
     <HambugerMenu />
 </header>
 
-<style>
-    header {
-        nav {
-            position: relative;
-        }
-    }
-</style>
+<style></style>

@@ -10,9 +10,6 @@
 
 <style>
     #hamburger-menu {
-        position: absolute;
-        top: 3.25rem;
-        right: 3.125rem;
         border: none;
         cursor: pointer;
         display: flex;
@@ -134,10 +131,10 @@
             hamburgerMenu.classList.toggle("open");
             mobileMenu.classList.toggle("mobile-menu-open");
             logo.classList.toggle("mobile-menu-open");
-        // change class on .nav-copy
-        navCopy.forEach((el) => {
-            el.classList.toggle("mobile-menu-open");
-        });
+            // change class on .nav-copy
+            navCopy.forEach((el) => {
+                el.classList.toggle("mobile-menu-open");
+            });
         });
 
         // add class to hamburger menu based on url
@@ -154,6 +151,5 @@
             hamburgerMenu.classList.add(className);
         }
         addClassToHamburgerMenu(url);
-
     });
 </script>

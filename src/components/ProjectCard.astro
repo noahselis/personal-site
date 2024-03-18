@@ -1,7 +1,7 @@
 ---
-const { src, alt, link, target, title, description } = Astro.props;
+const { src, alt, link, title, description } = Astro.props;
 import { Image } from "astro:assets";
-import paperplane from "../images/svgs/paper-plane.svg";
+import BlackPaperPlane from "../images/svgs/paper-plane-black.svg";
 
 import Button from "../components/Button.astro";
 ---
@@ -12,12 +12,11 @@ import Button from "../components/Button.astro";
         <span>
             <h2>{title}</h2>
             <p>{description}</p>
-            <a href={link} target={target} rel="noopener noreferrer">
+            <a href={link} target="_blank" rel="noopener noreferrer">
                 <Button
                     style="white"
                     text="view project"
-                    icon={paperplane}
-                    iconFill="var(--white)"
+                    primaryIcon={BlackPaperPlane}
                 />
             </a>
         </span>
@@ -52,16 +51,19 @@ import Button from "../components/Button.astro";
             border: 1px solid var(--white);
             border-radius: 0.3rem;
             transition: opacity 0.3s ease;
+            padding: 0.75rem;
             span {
                 width: fit-content;
                 margin: 0 auto;
                 text-align: center;
             }
             h2 {
+                font-size: 2rem;
                 color: var(--white);
                 margin-bottom: 0.5rem;
             }
             p {
+                font-size: 1.25rem;
                 color: var(--white);
                 margin-bottom: 0.5rem;
             }

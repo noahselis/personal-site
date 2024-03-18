@@ -1,11 +1,16 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 
-import Button from "../components/Button.astro";
-import paperplane from "../images/svgs/paper-plane.svg";
+// import Button from "../components/Button.astro";
+// import paperplane from "../images/svgs/paper-plane.svg";
 ---
 
-<SiteLayout title="Noah Selis | Home Page" logoPadding="3.125rem 0 0 3.125rem">
+<SiteLayout
+    title="Noah Selis | Home Page"
+    logoPadding="2rem 0 0 2rem"
+    logoPositionTop="1.75rem"
+    logoPositionLeft="2.5rem"
+>
     <section class="content-wrapper">
         <div>
             <h1>Well, howdy!</h1>
@@ -48,10 +53,6 @@ import paperplane from "../images/svgs/paper-plane.svg";
             }
             > :last-child {
                 align-self: center;
-            }
-            @media (width < 700px) {
-                overflow-y: auto;
-                padding: 2.6rem 1.25rem 3rem;
             }
         }
     }
